@@ -1,5 +1,15 @@
-cleanlatte.Views.applicationView = Backbone.View.extend({
+cleanlatte.Views.applicationView = Backbone.View.template({
 
-  //template: application
+  events: {
+    "change #search": "onChangeSearch"
+  },
+
+  el: "#appHome",
+  onChangeSearch: function(event) {
+    var tags = $(event.target).val(),
+      url = tags.length ? "tags/" + tags : "";
+
+    Backbone.history.navigate(url, true);
+  }
 
 });
