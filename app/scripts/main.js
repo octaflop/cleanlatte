@@ -1,15 +1,14 @@
-require.config({
-  shim: {
-  },
 
-  paths: {
-    hm: 'vendor/hm',
-    esprima: 'vendor/esprima',
-    jquery: 'vendor/jquery.min'
+window.cleanlatte = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {},
+  init: function() {
+    console.log('Hello from Backbone!');
   }
-});
- 
-require(['app'], function(app) {
-  // use app here
-  console.log(app);
+};
+
+$(document).ready(function(){
+  cleanlatte.init();
 });
